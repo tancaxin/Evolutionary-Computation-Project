@@ -1,5 +1,5 @@
 """
-Experiment 11: Low Mut + One-point
+Experiment 10: Low Mut + One-point
 """
 
 from ga_implementation import genetic_algorithm
@@ -8,7 +8,7 @@ import time
 
 NUM_RUNS = 5
 print("="*80)
-print("EXPERIMENT 11: Low Mut + One-point")
+print("EXPERIMENT 10: Low Mut + One-point")
 print("="*80)
 print(f"Config: Pop=100, Mut=0.1, Cross=one_point, Sel=tournament")
 print(f"\nRunning {NUM_RUNS} times...")

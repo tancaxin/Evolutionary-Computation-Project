@@ -1,5 +1,5 @@
 """
-Experiment 14: Very Small Population
+Experiment 13: Very Small Population
 """
 
 from ga_implementation import genetic_algorithm
@@ -8,7 +8,7 @@ import time
 
 NUM_RUNS = 5
 print("="*80)
-print("EXPERIMENT 14: Very Small Population")
+print("EXPERIMENT 13: Very Small Population")
 print("="*80)
 print(f"Config: Pop=30, Mut=0.5, Cross=one-point, Sel=tournament")
 print(f"\nRunning {NUM_RUNS} times...")

@@ -1,5 +1,5 @@
 """
-Experiment 18: Two-point Crossover
+Experiment 17: Two-point Crossover
 """
 from ga_implementation import genetic_algorithm
 import numpy as np
@@ -7,7 +7,7 @@ import time
 
 NUM_RUNS = 5
 print("="*80)
-print("EXPERIMENT 18: Two-point Crossover")
+print("EXPERIMENT 17: Two-point Crossover")
 print("="*80)
 print(f"Config: Pop=100, Mut=0.5, Cross=two_point, Sel=tournament")
 print(f"\nRunning {NUM_RUNS} times...")

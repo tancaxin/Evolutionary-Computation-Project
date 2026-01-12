@@ -1,31 +1,44 @@
 """
-Experiment 19: Arithmetic Crossover
+Experiment 8: Very High Crossover Rate
 """
+
 from ga_implementation import genetic_algorithm
 import numpy as np
 import time
 
 NUM_RUNS = 5
 print("="*80)
-print("EXPERIMENT 19: Arithmetic Crossover")
+print("EXPERIMENT 8: Very High Crossover Rate")
 print("="*80)
-print(f"Config: Pop=100, Mut=0.5, Cross=arithmetic, Sel=tournament")
+print(f"Config: Pop=100, Mutation=OFF, Crossover=0.9, Sel=tournament")
 print(f"\nRunning {NUM_RUNS} times...")
 print("="*80)
 
-results = {'gens': [], 'fitness': [], 'time': []}
-
+results = {'gens': [], 'fitness': [], 'time': [], 'individuals': []}
 for run in range(NUM_RUNS):
     print(f"\nRun {run+1}/{NUM_RUNS}: ", end="", flush=True)
+
     start = time.time()
     gens, best_ind, best_fit, _ = genetic_algorithm(
-        pop_size=100, n_genes=7, max_generations=15000,
-        mutation_rate=0.5, crossover_rate=0.7,
-        selection_method='tournament', crossover_method='arithmetic',
-        use_mutation=True, use_crossover=True, verbose=False
+        pop_size=100,
+        n_genes=7,
+        max_generations=15000,
+        mutation_rate=0.0,           # irrelevant since mutation is off
+        crossover_rate=0.9,          
+        selection_method='tournament',
+        crossover_method='one_point',
+        use_mutation=False,
+        use_crossover=True,
+        verbose=False
     )
     elapsed = time.time() - start
-    results['gens'].append(gens); results['fitness'].append(best_fit); results['time'].append(elapsed)
+
+    results['gens'].append(gens)
+    results['fitness'].append(best_fit)
+    results['time'].append(elapsed)
+    results['individuals'].append(best_ind)
+
+
     status = "✓" if best_fit >= 0.85 else "✗"
     print(f"{status} Gens={gens:5d}, Fit={best_fit:.5f}, Time={elapsed:5.2f}s")
 
